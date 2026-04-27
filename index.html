@@ -88,10 +88,36 @@
         </article>
     </section>
 
+    <!-- ============ SECTION 4 : COUPON REDEEM ============ -->
+    <section class="card-section" id="couponSection">
+        <article class="card card-coupon reveal" data-reveal>
+            <div class="coupon-stage" id="couponStage">
+                <!-- Redeem box (initial state) -->
+                <div class="redeem-box" id="redeemBox">
+                    <div class="redeem-glow"></div>
+                    <p class="card-eyebrow centered">a little something for you</p>
+                    <h2 class="card-title centered">มี card มาให้เก็บเหมือน <span class="name">Shopee</span></h2>
+                    <button class="redeem-btn" id="redeemBtn" type="button" aria-label="Redeem coupon">
+                        <span class="redeem-btn-label">Redeem Coupon</span>
+                        <span class="redeem-btn-shine"></span>
+                    </button>
+                </div>
+
+                <!-- Coupon cards (revealed after click). Cards are rendered by JS from the COUPONS array in script.js -->
+                <div class="wallet" id="wallet" aria-hidden="true">
+                    <p class="wallet-label">added to your wallet</p>
+                    <div class="coupon-stack" id="couponStack"></div>
+                    <p class="wallet-hint">เก็บไว้ใช้ได้เลยน้า &#x2665;</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
     <footer class="page-footer">
         <p>&#x2665; &nbsp; congratulations, graduate &nbsp; &#x2665;</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
