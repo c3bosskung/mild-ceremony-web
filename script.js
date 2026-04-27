@@ -3,11 +3,13 @@
 // =============================================================
 const LETTER_MESSAGE = `สวัสดี,
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum
+เรียนจบแล้ว เย้ๆๆ ถึงจะจบมาสักพักแล้วก้เถอะนะ เห็นตั้งแต่นั่งอ่านหนังสือทุกวัน บ่นท้อบ่นเหนื่อยตลอด สรุปก็กลายเป็นพยาบาลเต้มตัวแล้ว เก่งมาก
 
-urna a eleifend varius, urna mauris efficitur elit, et convallis ante dolor sed sapien. Aliquam et placerat eros. Nulla et porta magna
+เค้าตั้งใจซื้อ Apple Watch มาให้เอาไปใช้ใส่ทำงานด้วย!! ส่วนดอกไม้ก้ตั้งใจเลือกมากๆ ขอให้ตัวชอบนะ อิอิ
 
-Donec neque eros, rutrum id est ut, mattis porttitor velit. Duis egestas mi a lectus dictum, ultricies vestibulum neque dapibus. Nulla elit elit`;
+ขอให้ได้กินของอร่อยเยอะๆ บาบิตัวอ้วนๆ ตั้งใจทำงานนะ เค้าจะคอย support ตัวตลอด จะคอยชมว่า เก่งมาก อีกเยอะๆเลยยยย
+
+อยู่ด้วยกันไปนานๆนะ อิอิ`;
 
 // =============================================================
 //  Mock coupons — edit these to change what the wallet shows.
@@ -47,7 +49,7 @@ const COUPONS = [
 // =============================================================
 //  Countdown gate — page is locked until Apr 28, 15:00 Bangkok (UTC+7)
 // =============================================================
-const REVEAL_AT = new Date("2026-04-27T15:00:00+07:00").getTime();
+const REVEAL_AT = new Date("2026-04-28T15:00:00+07:00").getTime();
 
 const gateEl = document.getElementById("gate");
 const cdDays = document.getElementById("cdDays");
@@ -176,7 +178,7 @@ function renderCoupons() {
                 <div class="coupon-top">
                     <div class="coupon-brand">
                         <span class="coupon-brand-mark">&#x2665;</span>
-                        <span class="coupon-brand-name">Mild's Wallet</span>
+                        <span class="coupon-brand-name">Coupon Kubpom</span>
                     </div>
                     <span class="coupon-chip" aria-hidden="true"></span>
                 </div>

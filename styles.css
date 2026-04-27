@@ -822,7 +822,8 @@ body.locked { overflow: hidden; }
 
 .coupon-card {
     position: relative;
-    width: min(86vw, 380px);
+    width: 100%;
+    max-width: 380px;
     aspect-ratio: 1.6 / 1;
     border-radius: 18px;
     padding: 1.3rem 1.4rem;
@@ -851,6 +852,7 @@ body.locked { overflow: hidden; }
     padding: 0.4rem 0 1rem;
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .coupon-wrap {
@@ -860,6 +862,11 @@ body.locked { overflow: hidden; }
     align-items: center;
     gap: 0.6rem;
     z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
     transition: margin 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
                 transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
