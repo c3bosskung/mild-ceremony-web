@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Letter For You</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600&family=Inter:wght@300;400;500&family=Trirong:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans+Thai+Looped:wght@300;400;500;600&family=Mali:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <canvas id="stars"></canvas>
+    <canvas id="confetti"></canvas>
+
+    <!-- Rockets are spawned into this layer by script.js -->
+    <div class="rocket-layer" id="rocketLayer" aria-hidden="true"></div>
+
+    <!-- ============ SECTION 1 : ENVELOPE ============ -->
+    <section class="stage" id="stageEnvelope">
+        <p class="hint" id="hint">สวัสดี จิ้มตรงจดหมายเลยจ้า</p>
+
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open envelope">
+            <div class="letter" id="letter">
+                <div class="letter-inner">
+                    <p class="letter-date">เย้เย้เย้</p>
+                    <h1 class="letter-title">เรียนจบแล้ว (เกือบปี),<br />
+                    <p class="letter-sign letter-tease">— เลื่อนลงไปๆๆๆ —</p>
+                </div>
+            </div>
+            <div class="back"></div>
+            <div class="front"></div>
+            <div class="flap" id="flap">
+                <div class="seal"><span>&#x2665;</span></div>
+            </div>
+        </div>
+
+        <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+            <span>scroll</span>
+            <div class="chev"></div>
+        </div>
+    </section>
+
+    <!-- ============ SECTION 2 : PHOTO CARD ============ -->
+    <section class="card-section">
+        <article class="card reveal" data-reveal>
+            <div class="card-photo">
+                <img id="heroPhoto" src="photo.jpg" alt="Her graduation photo"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');" />
+                <div class="photo-fallback">
+                    <span>Drop a photo named</span>
+                    <code>photo.jpg</code>
+                    <span>in this folder</span>
+                </div>
+            </div>
+            <div class="card-caption">
+                <p class="card-eyebrow">The พยาบาลจบใหม่</p>
+                <h2 class="card-title"><span class="name">Mild</span></h2>
+                <p class="card-sub">เลื่อนลงไปอีกๆๆๆ</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- ============ SECTION 3 : LETTER CARD ============ -->
+    <section class="card-section">
+        <article class="card card-letter reveal" data-reveal>
+            <p class="card-eyebrow centered">สวัสดี พยาบาลจบใหม่ มีอะไรจะบอกด้วยแหละ</p>
+            <h2 class="card-title centered">หวัดดี <span class="name">ตัว</span></h2>
+            <div class="card-body" id="letterBody"></div>
+            <p class="card-sign">— เค้าเอง</p>
+        </article>
+    </section>
+
+    <footer class="page-footer">
+        <p>&#x2665; &nbsp; congratulations, graduate &nbsp; &#x2665;</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
