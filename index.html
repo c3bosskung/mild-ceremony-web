@@ -16,6 +16,23 @@
     <!-- Rockets are spawned into this layer by script.js -->
     <div class="rocket-layer" id="rocketLayer" aria-hidden="true"></div>
 
+    <!-- ============ COUNTDOWN GATE ============ -->
+    <div class="gate" id="gate" role="dialog" aria-label="Countdown until reveal">
+        <div class="gate-inner">
+            <p class="gate-eyebrow">ขออนุญาติเม็ดจนถึง</p>
+            <div class="gate-clock" id="gateClock" aria-live="polite">
+                <div class="unit"><span class="num" id="cdDays">00</span><span class="lbl">days</span></div>
+                <div class="sep">:</div>
+                <div class="unit"><span class="num" id="cdHours">00</span><span class="lbl">hours</span></div>
+                <div class="sep">:</div>
+                <div class="unit"><span class="num" id="cdMins">00</span><span class="lbl">mins</span></div>
+                <div class="sep">:</div>
+                <div class="unit"><span class="num" id="cdSecs">00</span><span class="lbl">secs</span></div>
+            </div>
+            <p class="gate-when">เปิดได้ <span>28 เมษายน · 15:00 น.</span></p>
+        </div>
+    </div>
+
     <!-- ============ SECTION 1 : ENVELOPE ============ -->
     <section class="stage" id="stageEnvelope">
         <p class="hint" id="hint">สวัสดี จิ้มตรงจดหมายเลยจ้า</p>

@@ -12,6 +12,53 @@ const LETTER_MESSAGE = `สวัสดี,
 อยู่ด้วยกันไปนานๆนะ อิอิ`;
 
 // =============================================================
+//  Countdown gate — page is locked until Apr 28, 15:00 Bangkok (UTC+7)
+// =============================================================
+const REVEAL_AT = new Date("2026-04-28T15:00:00+07:00").getTime();
+
+const gateEl = document.getElementById("gate");
+const cdDays = document.getElementById("cdDays");
+const cdHours = document.getElementById("cdHours");
+const cdMins = document.getElementById("cdMins");
+const cdSecs = document.getElementById("cdSecs");
+
+function pad2(n) { return n < 10 ? "0" + n : "" + n; }
+
+let gateTimer = null;
+function tickGate() {
+    const remaining = REVEAL_AT - Date.now();
+    if (remaining <= 0) {
+        cdDays.textContent = cdHours.textContent = cdMins.textContent = cdSecs.textContent = "00";
+        unlockPage();
+        return;
+    }
+    const totalSec = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSec / 86400);
+    const hours = Math.floor((totalSec % 86400) / 3600);
+    const mins = Math.floor((totalSec % 3600) / 60);
+    const secs = totalSec % 60;
+    cdDays.textContent = pad2(days);
+    cdHours.textContent = pad2(hours);
+    cdMins.textContent = pad2(mins);
+    cdSecs.textContent = pad2(secs);
+}
+
+function unlockPage() {
+    if (gateTimer) { clearInterval(gateTimer); gateTimer = null; }
+    if (gateEl) gateEl.classList.add("hidden");
+    document.body.classList.remove("locked");
+}
+
+if (Date.now() >= REVEAL_AT) {
+    // Already past the reveal time — never show the gate.
+    if (gateEl) gateEl.remove();
+} else {
+    document.body.classList.add("locked");
+    tickGate();
+    gateTimer = setInterval(tickGate, 1000);
+}
+
+// =============================================================
 //  Envelope open
 // =============================================================
 const envelope = document.getElementById("envelope");
